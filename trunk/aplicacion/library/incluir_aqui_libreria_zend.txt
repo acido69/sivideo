@@ -1,0 +1,2 @@
+en este nivel es necesario descargar la librería de Zend. metiendolo todo en una carpeta llamada "zend".
+sin esta librería no funciona nada

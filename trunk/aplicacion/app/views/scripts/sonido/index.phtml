@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title><?php echo $this->title;  ?></title>
+		<link rel="stylesheet" href="<?php echo $this->baseUrl() ?>/css/Fcss/fcss.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="<?php echo $this->baseUrl() ?>/css/Fcss/screen.css" type="text/css" media="screen" charset="utf-8" />
+	</head>
+	<body class="portada">
+		<div class="container">
+			<?php echo $this->render('logos.phtml'); ?>		
+			<?php echo $this->render('menu.phtml'); ?>
+			<div class="contenido tr sonido">
+				<div class="escuchar td">
+					<h1>Escuchar...</h1>
+					<embed src="http://www.seeqpod.net/cache/seeqpodEmbed.swf" 
+						wmode="transparent" 
+						width="482" height="350" 
+						type="application/x-shockwave-flash" flashvars="domain=http://www.seeqpod.com&playlist=cd60ef2d35"/>
+				</div>
+				<div class="descargar td">
+					<h1>Descargar...</h1>
+					<?php foreach($this->sonido as $sonido): ?>
+					<p>
+						<a href="<?php echo $sonido['url']; ?>" title="<?php echo $sonido['title']; ?>">
+						<?php
+						$sonido['title'] = strlen($sonido['title'])<35?$sonido['title']:substr($sonido['title'], 0, 32).'...';
+						 ?>
+							<?php echo $sonido['title']; ?>
+						</a>
+					</p>
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<?php echo $this->render('destacados.phtml'); ?>
+			<?php echo $this->render('info.phtml'); ?>
+		</div>
+		<?php echo $this->render('analitycs.phtml') ?>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+body {
+	font:normal normal 0.72em/125% Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+*.no_txt{
+	text-indent:-9999em;
+	overflow:hidden;
+}
+h1.title, h2.subtitle{
+	font-family:"Arial Black";
+	color:#fff;
+	line-height:120%;
+}
+h1.title{
+	font-size:1.8em;
+}
+h2.subtitulo{
+	font-size:1.4em;
+	margin-bottom:14px;
+	
+}
+/*
+ 	replace txt at img
+	*/
+#logoPrincipal a{
+	background:transparent url(../img/txt/lacalle13.gif) 20px 28px no-repeat;
+	float:left;
+	width:497px;
+	height:120px;
+}
+#afuego{
+	background:transparent url(../img/txt/afuego.gif) 130px 60px no-repeat;
+	float:left;
+	width:240px;
+	height:120px;
+	margin-left:30px;
+}
+#destacado_1{
+	background:transparent url(../img/txt/enlacesrelacionados.gif) 6px 0 no-repeat
+}
+#destacado_2{
+	background:transparent url(../img/txt/suscribete.gif) 6px 0 no-repeat
+}
+#destacado_3{
+	background:transparent url(../img/txt/porque.gif) 6px 0 no-repeat
+}
+#navfoto_left{
+	background:transparent url(../img/icon/rows.gif) 5px -24px no-repeat
+}
+#navfoto_right{
+	background:transparent url(../img/icon/rows.gif) 60px 0 no-repeat
+}

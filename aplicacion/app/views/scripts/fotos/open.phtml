@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title><?php echo $this->title;  ?></title>
+		<link rel="stylesheet" href="<?php echo $this->baseUrl() ?>/css/Fcss/fcss.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="<?php echo $this->baseUrl() ?>/css/Fcss/screen.css" type="text/css" media="screen" charset="utf-8" />		
+	</head>
+	<body class="portada">
+		<div class="container">
+			<?php echo $this->render('logos.phtml'); ?>		
+			<?php echo $this->render('menu.phtml'); ?>
+			<div class="contenido tr images">
+				<div class="principal td">
+					<h1 class="title">
+						<?php echo $this->image['detail']['title']; ?>
+					</h1>
+					<img src="<?php echo $this->image['general']['Medium']->uri;?>" 
+								alt="<?php echo $this->image['detail']['title']; ?>" />
+				</div>
+				<div class="util td">
+					<p class="tr navfoto">
+						<?php if($this->existBack): ?>
+						<a id="navfoto_left" class="no_txt" href="<?php echo $this->url(array('controller'=>'fotos',
+													'action'=>'open', 
+													'id'	=>$this->image['detail']['id'],
+													'page'	=>($this->page-1),
+													'title'=>$this->image['detail']['title']));?>">
+							anterior</a>
+						<?php else: ?>
+						<span>&nbsp;</span>
+						<?php endif; ?>
+						<span>Navegar</span>
+						<?php if($this->existNext): ?>
+						<a id="navfoto_right" class="no_txt" href="<?php echo $this->url(array('controller'=>'fotos',
+													'action'=>'open', 
+													'id'	=>$this->image['detail']['id'],
+													'page'	=>($this->page+1),
+													'title'=>$this->image['detail']['title']));?>">
+							siguiente</a>
+						<?php else: ?>
+						<span>&nbsp;</span>
+						<?php endif; ?>
+					</p>
+				<?php for($i=0; $i<count($this->images);$i++): ?>
+					<p class="tr">
+						<a href="<?php echo $this->url(array('controller'=>'fotos',
+											'action'=>'open',
+											'id'	=>$this->images[$i]['general']->id,
+											'page'	=>$this->page,
+											'title'=>$this->images[$i]['general']->title));?>" class="td">
+							<img src="<?php echo $this->images[$i]['detail']['Thumbnail']->uri;?>" 
+								alt="<?php echo $this->images[$i]['general']->title; ?>" />
+						</a>
+						<?php 
+						$i++;
+						if(isset($this->images[$i])): ?>
+						<a href="<?php echo $this->url(array('controller'=>'fotos',
+											'action'=>'open', 
+											'id'	=>$this->images[$i]['general']->id,
+											'page'	=>$this->page,
+											'title'=>$this->images[$i]['general']->title));?>" class="td _last">
+							<img src="<?php echo $this->images[$i]['detail']['Thumbnail']->uri;?>" 
+								alt="<?php echo $this->images[$i]['general']->title; ?>" />
+						</a>
+						<?php endif; ?>
+					</p>
+				<?php endfor;?>
+				</div>			
+			</div>
+			<?php echo $this->render('destacados.phtml'); ?>
+			<?php echo $this->render('info.phtml'); ?>
+		</div>
+	</body>
+</html>
+    

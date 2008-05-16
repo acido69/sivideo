@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title><?php echo $this->title;  ?></title>
+		<link rel="stylesheet" href="<?php echo $this->baseUrl() ?>/css/Fcss/fcss.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="<?php echo $this->baseUrl() ?>/css/Fcss/screen.css" type="text/css" media="screen" charset="utf-8" />
+	</head>
+	<body class="portada">
+		<div class="container">
+			<?php echo $this->render('logos.phtml'); ?>		
+			<?php echo $this->render('menu.phtml'); ?>
+			<div class="contenido tr">
+				<div class="principal td" id="video_content">
+					<object width="425" height="355">
+						<param name="movie" 
+								value="<?php echo $this->video_principal?>&rel=0&color1=0x006699&color2=0x54abd6">
+						</param>
+						<param name="wmode" value="transparent">
+						</param>
+						<embed src="<?php echo $this->video_principal?>&rel=0&color1=0x006699&color2=0x54abd6" 
+								type="application/x-shockwave-flash" 
+								wmode="transparent" 
+								width="425" 
+								height="355">
+						</embed>
+					</object>
+				</div>
+				<div class="util td">
+					<div class="video_tumbs">
+						<?php foreach ($this->video as $video):
+								$_id = explode('?v=', $video->mediaGroup->player[0]->url);								
+						?>						
+							<div class="video_thumb tr">
+								<img src="<?php echo $video->mediaGroup->thumbnail[0]->url; ?>" 
+										alt="<?php echo $video->mediaGroup->title->text ?>"/>
+								<span>
+									<a href="<?php echo $this->url(array('controller'=>'index',
+											'action'=>'open',
+											'id'	=>$_id[1],
+											'title'=>str_replace(array('+', '-'), '', $video->mediaGroup->title->text)));?>"
+										class="enlace_video">
+										<?php echo $video->mediaGroup->title->text; ?>
+									</a>
+								</span>
+							</div>							
+						<?php endforeach; ?>
+						
+					</div>
+				</div>
+			</div>
+			<?php echo $this->render('destacados.phtml'); ?>
+			<?php echo $this->render('info.phtml'); ?>
+		</div>		
+		<?php echo $this->render('analitycs.phtml') ?>
+	</body>
+</html>

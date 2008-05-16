@@ -1,0 +1,176 @@
+body{
+	background:#39889f url(img/bg/body.jpg) 0 0 repeat-x
+}
+a{text-decoration:none}
+/*
+	LISTAS
+*/
+ul.list_1{}
+ul.list_1 li{
+	list-style:none;
+	list-style-position:inside;
+	margin-bottom:4px
+}
+ul.list_1 li a{
+	background:url(img/bullet/list_1.png) no-repeat 0 0;
+	padding-left:17px;
+}
+/*
+	GRID DESING
+*/
+.container{
+	background:transparent url(img/bg/contenido.gif) 0 447px no-repeat
+}
+.info{
+	background:#024a59 url(img/bg/info.gif) 0 0 no-repeat
+}
+.info a, .info{ 
+	color:#39889f
+}
+.menu{
+	background:#fefdfd url(img/bg/menu.gif) 0 0 no-repeat;
+	height:31px;
+	padding:0 20px
+}
+.menu li{
+	list-style:none;
+	display:inline
+}
+.menu li a{
+	line-height:31px;
+	float:left;
+	height:31px;
+	margin-right:10px;
+	color:#09191d;
+	text-decoration:none;
+}
+.contenido{
+	padding:10px 20px;
+}
+.portada .principal{
+	height:400px
+}
+.principal{
+	width:482px;
+	margin-right:15px;
+}
+	.principal object,
+	.principal embed{
+		margin:25px 0 0 14px
+	}
+.util{
+	width:233px;
+}
+.destacados{
+	margin-bottom:10px;
+	padding:0 20px
+}
+.destacado{
+	width:233px;
+	height:177px;
+	background:#4e94a8 url(img/bg/destacado.gif) right bottom no-repeat;
+	margin-right:15px;
+	color:#fff
+}
+.destacado.last{margin-right:0;}
+.destacado h3{
+	height:33px;
+	background-color:#deefe6!important;
+	
+}
+.destacado ._content{
+	margin:5px
+}
+.destacado.enlace_relacionado a{
+	display:block
+}
+.info{
+	height:30px;
+	line-height:30px;
+	padding-right:20px;
+	text-align:right;
+}
+.video_tumbs{
+	height:345px;
+	overflow:auto;
+	color:#deefe6;
+	font-size:0.8em;
+}
+
+.video_thumb{
+	margin:0 0 7px 0;
+	padding:4px;
+	float:left;
+	text-align:center;
+	display:block;
+	width:207px;
+}
+.video_thumb img{
+	border:1px solid #133138;
+	display:block;
+	margin:0 auto;
+}
+.video_thumb span{
+	background-color:#d70079;
+}
+.video_thumb span a{
+	color:#fff;
+	text-decoration:none;
+}
+.images .principal h1{
+	text-align:left;
+}
+.images .principal{
+	height:auto;
+	text-align:center;
+}
+.images .principal img{
+	max-width:482px;
+	width: expression(this.width > 482 ? 482: true);
+}
+.images .util p{
+	margin-bottom:5px
+}
+.images .util a{
+	width:100px;
+	height:100px;
+	background-color:#000;
+	text-align:center;
+	margin-right:32px
+}
+.images .util a._last{
+	margin-right:0
+}
+.images .navfoto{
+	background-color:#000;
+	color:#fff;
+}
+.images .navfoto a, .images .navfoto span{
+	float:left;
+	display:inline;
+	width:33%;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	margin:0;
+}
+.sonido h1{
+	color:#fff;
+	line-height:1.75em;
+	font-size:1.5em;
+	
+	margin-bottom:15px;
+	
+}
+.sonido .descargar{
+	margin-left:16px;
+	width:230px;
+}
+.sonido .descargar p{
+	margin-bottom:10px
+}
+.sonido .descargar a{
+	background-color:#d70079;
+	color:#fff;
+	padding:0 5px;
+}
